@@ -116,3 +116,32 @@ formProgetto.addEventListener("submit", function(event) {
     inputTitolo.value = "";
     inputDescrizione.value = "";
 });
+
+// Funzione Asincrona per recuperare dati reali dalle API di GitHub
+async function caricaProfiloGitHub() {
+    try {
+        // 1. Chiamata HTTP GET al server di GitHub
+        const risposta = await fetch("https://api.github.com/users/Cesare-V")
+
+        // 2. Controllo di sicurezza: la risposta è positiva?
+        if (!risposta.ok) {
+            throw new Error("Impossibile recuperare i dati da GitHub");
+        }
+
+        // 3. Estraiamo il JSON
+        const dati = await risposta.json();
+        console.log("Dati reali ricevuti da GitHub:", dati);
+
+        // 4. Inseriamo i dati dinamici nel DOM
+        const contenitoreProfilo = document.getElementById("profilo-github");
+        contenitoreProfilo.innerHTML = `
+            <img src="${dati.avatar_url}" alt="Foto di Cesare" class="avatar-github" />
+            <br>
+            <span class="badge-repo">Progetti pubblici su GitHub: ${dati.public_repos}</span>
+        `;
+    } catch (error) {
+        console.error("Si è verificato un errore:", error);
+    }
+}
+
+caricaProfiloGitHub();
