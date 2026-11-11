@@ -1,0 +1,99 @@
+/* 1. Stile generale della pagina */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6; /* Grigio chiaro moderno */
+    color: #1f2937;            /* Grigio scuro per il testo (più elegante del nero puro) */
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;   /* Centra la scheda sullo schermo */
+}
+
+/* 2. Creiamo una "card" bianca che racchiude il tuo profilo */
+.card {
+    background-color: #ffffff;
+    max-width: 750px;
+    padding: 30px;
+    border-radius: 12px;       /* Angoli arrotondati */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombra morbida */
+}
+
+/* 3. Stile del titolo */
+h1 {
+    color: #2563eb;            /* Blu moderno */
+    margin-top: 0;
+}
+
+h2 {
+    color: #9b9b9c;
+    font-style: italic;
+}
+
+/* 4. Trasformiamo il link in un vero bottone cliccabile */
+.btn-saluto {
+    display: inline-block;
+    background-color: #ea580c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;      /* Rimuove la classica sottolineatura blu */
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Effetto quando passi sopra il mouse col cursore */
+.btn-saluto:hover {
+    background-color: #c2410c;  /* Blu leggermente più scuro */
+}
+
+/* Aggiunge lo stile per la card progetto */
+.card-progetto {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Dispone la sezione Progetti in modalità griglia */
+#sezione-progetti {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px; /* Spazio uniforme tra le card */
+}
+
+#form-progetto {
+    display: flex;
+    flex-direction: column; /* Mette gli elementi ordinatamente uno sotto l'altro */
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#form-progetto input {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#form-progetto input:focus {
+    outline: none;
+    border-color: #2563eb;  /* Si illumina di blu quando ci clicchi dentro! */
+}
+
+/* Quando lo schermo è più stretto di 600px (smartphone) */
+@media (max-width: 600px) {
+    body {
+        padding: 15px; /* Riduciamo i margini per sfruttare tutto lo schermo piccolo */
+    }
+    
+    .card {
+        padding: 20px; /* Alleggeriamo il cuscino interno */
+    }
+}
+
+#form-progetto label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il mio portfolio - Cesare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="card">
+        <header>
+            <h1>Ciao, mi chiamo Cesare</h1>
+            <h2>Aspirante Full Stack Developer</h2>
+        </header>
+        <p>Voglio studiare il Full Stack Development per trovare lavoro e costruire la mia stabilità economica.</p>
+        
+        <section>
+            <h3>Tecnologie che imparerò:</h3>
+            <ul id="lista-competenze"></ul>  
+        </section>
+        
+        <section>
+            <h3>Progetti in cantiere:</h3>
+            <div id="sezione-progetti"></div>
+        </section>
+        
+
+        <form id="form-progetto" style="margin-bottom: 20px;">
+            <label for="input-titolo">Titolo del Progetto:</label>
+            <input type="text" id="input-titolo" placeholder="Nome nuovo progetto" required>
+            <label for="input-descrizione">Descrizione del Progetto:</label>
+            <input type="text" id="input-descrizione" placeholder="Descrizione" required> 
+            <button type="submit">Aggiungi</button>
+        </form>
+
+        <p>Mi piace videogiocare e fare coding</p>
+
+        <!-- Elementi interattivi con identificatori unici (id) -->
+         <button id="bottone-saluto" class="btn-saluto">👋 Manda un saluto a Cesare</button>
+         <p class="box-contatore">Saluti ricevuti: <span id="numero-saluti">0</span></p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
